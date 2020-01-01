@@ -118,12 +118,12 @@ while True:
     if ball.ycor() >= 290:
         ball.sety(290) #Since movement is not round figure we need to reset position
         ball.dy *= -1
-        os.system("aplay bounce1.wav&")
+        os.system("aplay /home/shubham/Desktop/Pythongames/PingPong/bounce1.wav&") #For some reason had to give full path
 
     if ball.ycor() <= -290:
         ball.sety(-290) #Since movement is not round figure we need to reset position
         ball.dy *= -1
-        os.system("aplay bounce1.wav&")
+        os.system("aplay /home/shubham/Desktop/Pythongames/PingPong/bounce1.wav&")
 
     if ball.xcor() >= 390:
         ball.goto(0, 0)
@@ -144,11 +144,11 @@ while True:
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() > pr.ycor() - 40 and ball.ycor() < pr.ycor() + 40):
         ball.setx(340) #Since movement is not round figure we need to reset position
         ball.dx *= -1
-        os.system("aplay bounce2.wav&")
+        os.system("aplay /home/shubham/Desktop/Pythongames/PingPong/bounce2.wav&")
 
     if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() > pl.ycor() - 40 and ball.ycor() < pl.ycor() + 40):
         ball.setx(-340) #Since movement is not round figure we need to reset position
         ball.dx *= -1
-        os.system("aplay bounce2.wav&")
+        os.system("aplay /home/shubham/Desktop/Pythongames/PingPong/bounce2.wav&")
     
 
