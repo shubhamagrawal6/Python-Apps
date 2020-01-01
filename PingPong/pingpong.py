@@ -16,6 +16,7 @@ win.tracer(0) #Stops window from updating so we can manually update it
 #Score variables
 sl = 0
 sr = 0
+flag = True
 
 
 #Left Paddle
@@ -94,6 +95,17 @@ def rightdown():
         y -= 25 #Move down by 25 pixels
         pr.sety(y) #Changing the y-coordinate
 
+def flagf():
+    global flag, sl, sr 
+    flag = False
+    sl = 0
+    sr = 0
+    score.clear()
+    ball.showturtle()
+    pl.showturtle()
+    pr.showturtle()  
+    score.goto(0,260)
+
 
 #Keyboard se input
 win.listen() #This tells the window to listen for inputs from keyboard
@@ -101,12 +113,15 @@ win.onkeypress(leftup, "w") #On pressing w it call function leftup
 win.onkeypress(leftdown, "s")
 win.onkeypress(rightup, "Up")
 win.onkeypress(rightdown, "Down")
-
+win.onkeypress(flagf, "n")
 
 
 #Actual Game
 while True:
     win.update()
+
+
+    flag = True
 
 
     #Ball movement
@@ -131,13 +146,31 @@ while True:
         sl += 1
         score.clear()
         score.write(f"Left: {sl}  Right: {sr}", align = "center", font=('helvetica', 20, 'normal'))
-    
+        if sl >= 5:
+            ball.hideturtle()
+            pl.hideturtle()
+            pr.hideturtle()
+            while flag:
+                win.update()
+                score.goto(0,0)
+                score.write("Left Wins",align="center",font=('helvetica', 80, 'normal'))
+        
     if ball.xcor() <= -390:
         ball.goto(0, 0)
         ball.dx *= -1
         sr += 1
         score.clear()
         score.write(f"Left: {sl}  Right: {sr}", align = "center", font=('helvetica', 20, 'normal'))
+        if sr >= 5:
+            ball.hideturtle()
+            pl.hideturtle()
+            pr.hideturtle()
+            while flag:
+                win.update()
+                score.goto(0,0)
+                score.write("Right Wins",align="center",font=('helvetica', 80, 'normal'))
+
+        
 
 
     #Paddle se Bounce
