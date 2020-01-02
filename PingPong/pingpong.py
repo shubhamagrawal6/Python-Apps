@@ -62,7 +62,7 @@ score. goto(0, 260)
 score.write(f"Left: {sl}  Right: {sr}", align = "center", font=('helvetica', 20, 'normal'))
 
 
-#Game chalane ke functions
+#Game ke functions
 def leftup():
     y = pl.ycor() #Gives y-coordinate of center of object
     if y >= 250:
