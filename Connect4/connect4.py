@@ -15,7 +15,7 @@ red = (255,0,0)
 yellow = (255,255,0)
 sqsize = 100
 radius = sqsize//2 - 5
-myfont = pygame.font.SysFont("helvetica", 75)
+myfont = pygame.font.SysFont("helvetica", 75) #Creating a font
 play = True
 turn1 = True
 
@@ -84,7 +84,7 @@ while play:
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
-            sys.exit()
+            sys.exit() #To exit the system on clicking cross button 
         
         if event.type == pygame.MOUSEMOTION:
             pygame.draw.rect(win, black, (0,0, columns*sqsize, sqsize))
@@ -107,7 +107,7 @@ while play:
                     droppiece(board, col, 1)
                     turn1 = not turn1
                     if winning(board, 1):
-                        label = myfont.render("Player 1 wins!!", 1, red)
+                        label = myfont.render("Player 1 wins!!", 1, red) #To write result on screen
                         win.blit(label, (40,10))
                         play = False
 
