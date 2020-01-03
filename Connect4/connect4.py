@@ -123,7 +123,7 @@ while play:
         
     if not play:
         pygame.display.update()
-        pygame.time.wait(3000)
+        pygame.time.wait(3000) #Hold the display after game over
                 
                     
             
