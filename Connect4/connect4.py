@@ -108,8 +108,8 @@ while play:
                     droppiece(board, col, 1)
                     turn1 = not turn1
                     if winning(board, 1):
-                        label = myfont.render("Player 1 wins!!", 1, red) #To write result on screen
-                        win.blit(label, (40,10))
+                        label = myfont.render("Player 1 wins!!", 1, red) #Creates a string object called label
+                        win.blit(label, (40,10)) #Prints the label object at given position
                         play = False
 
             #Player 2 ka move
@@ -124,7 +124,7 @@ while play:
         
     if not play:
         pygame.display.update()
-        pygame.time.wait(3000) #Hold the display after game over
+        pygame.time.wait(3000) #Hold the display after game over, time in milliseconds
                 
                     
             
