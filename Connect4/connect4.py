@@ -3,13 +3,13 @@
 
 
 import numpy as np
-import pygame
+import pygame #In pygame the origin is at top left corner and Y-axis increases downwards
 import sys
 import os
 
 
 pygame.init()
-blue = (0,0,255)
+blue = (0,0,255) #RGB values for colour
 black = (0,0,0)
 red = (255,0,0)
 yellow = (255,255,0)
@@ -83,8 +83,9 @@ while play:
 
     for event in pygame.event.get():
 
+        #To exit the system on clicking cross button
         if event.type == pygame.QUIT:
-            sys.exit() #To exit the system on clicking cross button 
+            sys.exit()  
         
         if event.type == pygame.MOUSEMOTION:
             pygame.draw.rect(win, black, (0,0, columns*sqsize, sqsize))
@@ -95,13 +96,13 @@ while play:
                 pygame.draw.circle(win, yellow, (posx, sqsize//2), radius)
             pygame.display.update()
 
-
+        #On pressing mouse button
         if event.type == pygame.MOUSEBUTTONDOWN:
             pygame.draw.rect(win, black, (0,0, columns*sqsize, sqsize))
             posx = event.pos[0] #pos[0] gives the X-coordinate
             col = posx//sqsize
 
-            #Player 1 
+            #Player 1 ka move
             if turn1:
                 if board[0][col] == 0:
                     droppiece(board, col, 1)
@@ -111,7 +112,7 @@ while play:
                         win.blit(label, (40,10))
                         play = False
 
-            #Player 2
+            #Player 2 ka move
             else:
                 if board[0][col] == 0:
                     droppiece(board, col, 2)
