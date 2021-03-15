@@ -7,7 +7,7 @@ import pygame
 import tkinter as tk
 from tkinter import messagebox
 
-
+# Class for the grid object
 class cube(object):
     rows = 20
     w = 500
@@ -39,7 +39,7 @@ class cube(object):
        
  
  
- 
+# Class for the snake object
 class snake(object):
     body = []
     turns = {}
@@ -54,9 +54,11 @@ class snake(object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
- 
+            
+            #Getting the keys pressed as an array
             keys = pygame.key.get_pressed()
- 
+
+            #Iterating through the array to check which key is pressed 
             for key in keys:
                 if keys[pygame.K_LEFT]:
                     self.dirnx = -1
@@ -201,12 +203,6 @@ def main():
                 s.reset((10,10))
                 break
  
-           
         redrawWindow(win)
- 
-       
-    pass
- 
- 
  
 main()
