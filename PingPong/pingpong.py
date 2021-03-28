@@ -62,7 +62,7 @@ score. goto(0, 260)
 score.write(f"Left: {sl}  Right: {sr}", align = "center", font=('helvetica', 20, 'normal'))
 
 
-#Game ke functions
+#Game functions
 def leftup():
     y = pl.ycor() #Gives y-coordinate of center of object
     if y >= 250:
@@ -107,7 +107,7 @@ def flagf():
     score.goto(0,260)
 
 
-#Keyboard se input
+#Keyboard input
 win.listen() #This tells the window to listen for inputs from keyboard
 win.onkeypress(leftup, "w") #On pressing w it call function leftup
 win.onkeypress(leftdown, "s")
@@ -129,7 +129,7 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
 
-    #Border se Bounce
+    #Border Bounce
     if ball.ycor() >= 290:
         ball.sety(290) #Since movement is not round figure we need to reset position
         ball.dy *= -1
@@ -173,7 +173,7 @@ while True:
         
 
 
-    #Paddle se Bounce
+    #Paddle Bounce
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() > pr.ycor() - 40 and ball.ycor() < pr.ycor() + 40):
         ball.setx(340) #Since movement is not round figure we need to reset position
         ball.dx *= -1
