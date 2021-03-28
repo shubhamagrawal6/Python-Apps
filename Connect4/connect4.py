@@ -20,7 +20,7 @@ play = True
 turn1 = True
 
 
-#Game ke functions
+#Game functions
 def drawboard(board):
     for c in range(columns):
         for r in range(rows):
@@ -102,7 +102,7 @@ while play:
             posx = event.pos[0] #pos[0] gives the X-coordinate
             col = posx//sqsize
 
-            #Player 1 ka move
+            #Player 1 move
             if turn1:
                 if board[0][col] == 0:
                     droppiece(board, col, 1)
@@ -112,7 +112,7 @@ while play:
                         win.blit(label, (40,10)) #Prints the label object at given position
                         play = False
 
-            #Player 2 ka move
+            #Player 2 move
             else:
                 if board[0][col] == 0:
                     droppiece(board, col, 2)
