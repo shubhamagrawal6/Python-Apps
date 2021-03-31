@@ -48,7 +48,7 @@ class entity_add:
         self.window = master
 
     def write(self):
-        f = open(r'C:\Users\agraw\Desktop\Projects\PythonViaGames\AccountInfo\Lock.txt', "a")
+        f = open('Lock.txt', "a")
         n = self.name
         e = self.email
         p = self.password
@@ -126,11 +126,11 @@ class entity_display:
             for i in objects:
                 i.destroy()
 
-            f = open(r'C:\Users\agraw\Desktop\Projects\PythonViaGames\AccountInfo\Lock.txt', 'r')
+            f = open('Lock.txt', 'r')
             lines = f.readlines()
             f.close()
 
-            f = open(r'C:\Users\agraw\Desktop\Projects\PythonViaGames\AccountInfo\Lock.txt', "w")
+            f = open('Lock.txt', "w")
             count = 0
 
             for line in lines:
@@ -160,11 +160,11 @@ def onsubmit():
     readfile()
 
 def clearfile():
-    f = open(r'C:\Users\agraw\Desktop\Projects\PythonViaGames\AccountInfo\Lock.txt', "w")
+    f = open('Lock.txt', "w")
     f.close()
 
 def readfile():
-    f = open(r'C:\Users\agraw\Desktop\Projects\PythonViaGames\AccountInfo\Lock.txt', 'r')
+    f = open('Lock.txt', 'r')
     count = 0
 
     for line in f:
